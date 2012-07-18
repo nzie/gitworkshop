@@ -20,19 +20,19 @@ import de.syngenio.lib.service.Service;
 
 public class GitLibrary {
 
-	BookDao bookDao = new BookDao();
+	final BookDao bookDao = new BookDao();
 
 	CharacterReader characterReader = new CharacterReader();
 
 	private BookShowService bookShowService = new BookShowService();
 
 	private BookCreateService bookCreationService = new BookCreateService();
-	
+
 	private BookEditService bookEditService = new BookEditService();
 
 	private Map<Integer, IMenuChoiceService> serviceHandlingChoice = new HashMap<Integer, IMenuChoiceService>();
 
-	private IMenuChoiceService bookDeletionService = new BookDeletionService();
+	private BookDeletionService bookDeletionService = new BookDeletionService();
 
 	private IMenuChoiceService bookRentService = new BookRentService();
 
@@ -40,7 +40,8 @@ public class GitLibrary {
 
 
 	public GitLibrary() {
-		((Service)bookShowService).setBookDao(this.bookDao);
+		bookShowService.setBookDao(bookDao);
+		bookDeletionService.setBookDao(bookDao);
 		((Service)bookRentService).setBookDao(this.bookDao);
 	}
 
@@ -80,7 +81,7 @@ public class GitLibrary {
 			option = CharacterReader.readIntegerFromConsole();
 			serviceHandlingChoice.get(option).optionSelected();
 		}
-		
+
 
 	}
 

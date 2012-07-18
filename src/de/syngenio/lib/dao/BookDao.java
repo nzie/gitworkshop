@@ -18,8 +18,7 @@ public class BookDao {
 		BookRegistry.registerBook(bookToSave);
 	}
 
-	public void deleteBook() {
-		// TODO Auto-generated method stub
-		
+	public void deleteBook(Book bookToDelete) {
+		BookRegistry.unregisterBook(bookToDelete);
 	}
 }
