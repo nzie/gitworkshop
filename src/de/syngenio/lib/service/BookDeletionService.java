@@ -6,6 +6,16 @@ public class BookDeletionService implements IMenuChoiceService{
 
 	BookDao bookDao;
 	
+	
+	public BookDeletionService(){
+		
+	}
+	
+	
+	private void deleteBook(){
+		
+	}
+	
 	@Override
 	public void optionSelected() {
 	bookDao.findAllBooks();
