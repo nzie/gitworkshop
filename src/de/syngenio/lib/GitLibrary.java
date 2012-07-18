@@ -16,6 +16,7 @@ import de.syngenio.lib.service.BookReturnService;
 import de.syngenio.lib.service.BookShowService;
 import de.syngenio.lib.service.DoNothingService;
 import de.syngenio.lib.service.IMenuChoiceService;
+import de.syngenio.lib.service.Service;
 
 public class GitLibrary {
 
@@ -41,6 +42,7 @@ public class GitLibrary {
 	public GitLibrary() {
 		bookShowService.setBookDao(bookDao);
 		bookDeletionService.setBookDao(bookDao);
+		((Service)bookRentService).setBookDao(this.bookDao);
 	}
 
 	/**

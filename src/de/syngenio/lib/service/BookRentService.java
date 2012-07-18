@@ -1,18 +1,22 @@
 package de.syngenio.lib.service;
 
-import de.syngenio.lib.dao.BookDao;
+import java.util.Collection;
 
-public class BookRentService implements IMenuChoiceService{
-	
-	BookDao bookDao;
+import de.syngenio.lib.domainobject.Book;
+import de.syngenio.lib.io.CharacterReader;
+
+public class BookRentService extends Service implements IMenuChoiceService{
 	
 	@Override
 	public void optionSelected() {
-		System.out.println("This operation is not supported yet");
-	}
-	
-	private  void rentABook(){
-		
+		Collection<Book> booksFound = this.getBookDao().findAllBooks();
+		System.out.println("Folgende Bücher sind registriert:");
+		for (Book book : booksFound) {
+			if(!book.isRented()) {
+				System.out.println("" + book);
+			}
+		}
+		CharacterReader.readString("Bitte geben Sie das auszuleihende Buch an: ");
 	}
 
 }
