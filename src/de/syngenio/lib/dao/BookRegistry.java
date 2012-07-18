@@ -11,11 +11,11 @@ public class BookRegistry {
 	private static Map<Long, Book> availableBooks = new HashMap<Long, Book>();
 
 	private static long bookIndex=-1;
-	
+
 	public static Book getBookById(long bookId) {
 		return availableBooks.get(bookId);
 	}
-	
+
 	public static Collection<Book> getAllBooks(){
 		return availableBooks.values();
 	}
@@ -23,6 +23,10 @@ public class BookRegistry {
 	public static void registerBook(Book bookToSave) {
 		bookToSave.setId(++bookIndex);
 		availableBooks.put(bookIndex, bookToSave);
+	}
+
+	public static void unregisterBook(Book bookToUnregester) {
+		availableBooks.remove( bookToUnregester.getId());
 	}
 
 }

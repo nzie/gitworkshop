@@ -1,10 +1,15 @@
 package de.syngenio.lib.service;
 
+import de.syngenio.lib.dao.BookDao;
+
 public class BookEditService implements IMenuChoiceService{
 
+	BookDao bookDao;
+	
 	@Override
 	public void optionSelected() {
-		System.out.println("not implemented");
+		bookDao.findAllBooks();
+		System.out.println("not implemented yet");
 	}
 
 }

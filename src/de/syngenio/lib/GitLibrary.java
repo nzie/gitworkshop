@@ -1,5 +1,7 @@
 package de.syngenio.lib;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -14,22 +16,23 @@ import de.syngenio.lib.service.BookReturnService;
 import de.syngenio.lib.service.BookShowService;
 import de.syngenio.lib.service.DoNothingService;
 import de.syngenio.lib.service.IMenuChoiceService;
+import de.syngenio.lib.service.Service;
 
 public class GitLibrary {
 
-	BookDao bookDao = new BookDao();
+	final BookDao bookDao = new BookDao();
 
 	CharacterReader characterReader = new CharacterReader();
 
 	private BookShowService bookShowService = new BookShowService();
 
 	private BookCreateService bookCreationService = new BookCreateService();
-	
+
 	private BookEditService bookEditService = new BookEditService();
 
 	private Map<Integer, IMenuChoiceService> serviceHandlingChoice = new HashMap<Integer, IMenuChoiceService>();
 
-	private IMenuChoiceService bookDeletionService = new BookDeletionService();
+	private BookDeletionService bookDeletionService = new BookDeletionService();
 
 	private IMenuChoiceService bookRentService = new BookRentService();
 
@@ -37,7 +40,9 @@ public class GitLibrary {
 
 
 	public GitLibrary() {
-		bookShowService.setBookDao(new BookDao());
+		bookShowService.setBookDao(bookDao);
+		bookDeletionService.setBookDao(bookDao);
+		((Service)bookRentService).setBookDao(this.bookDao);
 	}
 
 	/**
@@ -48,10 +53,19 @@ public class GitLibrary {
 	}
 
 	public void start() {
-		createBook("Harry Potter", "9983-78978");
+		createBook("Stephan Kings Es2" +
+				"", "9983-78978");
+		createBook("Pipi Langstrumpf", "9983-78978");
 		createBook("Illuminati", "790823-89079");
+		printWelcomeMsg();
 		printOptions();
-		System.out.println("Goodbye");
+		System.out.println("Goodbye dear user");
+	}
+
+	private void printWelcomeMsg() {
+		Date today = new Date();
+		SimpleDateFormat formatter = new SimpleDateFormat();
+		System.out.println("Welcome to the Lib! " + formatter.format(today));
 	}
 
 	private void printOptions() {
@@ -67,7 +81,7 @@ public class GitLibrary {
 			option = CharacterReader.readIntegerFromConsole();
 			serviceHandlingChoice.get(option).optionSelected();
 		}
-		
+
 
 	}
 
