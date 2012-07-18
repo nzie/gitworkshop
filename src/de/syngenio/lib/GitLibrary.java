@@ -52,7 +52,8 @@ public class GitLibrary {
 	}
 
 	public void start() {
-		createBook("Stephan Kings Es", "9983-78978");
+		createBook("Stephan Kings Es2" +
+				"", "9983-78978");
 		createBook("Pipi Langstrumpf", "9983-78978");
 		createBook("Illuminati", "790823-89079");
 		printWelcomeMsg();
