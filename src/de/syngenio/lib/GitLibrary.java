@@ -50,7 +50,7 @@ public class GitLibrary {
 	}
 
 	public void start() {
-		createBook("Harry Potter", "9983-78978");
+		createBook("Stephan Kings Es", "9983-78978");
 		createBook("Illuminati", "790823-89079");
 		printWelcomeMsg();
 		printOptions();
