@@ -4,7 +4,7 @@ public class BookEditService implements IMenuChoiceService{
 
 	@Override
 	public void optionSelected() {
-		System.out.println("not implemented");
+		System.out.println("not implemented yet");
 	}
 
 }
