@@ -1,5 +1,6 @@
 package de.syngenio.lib;
 
+import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -50,8 +51,13 @@ public class GitLibrary {
 	public void start() {
 		createBook("Harry Potter", "9983-78978");
 		createBook("Illuminati", "790823-89079");
+		printWelcomeMsg();
 		printOptions();
 		System.out.println("Goodbye");
+	}
+
+	private void printWelcomeMsg() {
+		System.out.println("Welcome to the Lib!");
 	}
 
 	private void printOptions() {
