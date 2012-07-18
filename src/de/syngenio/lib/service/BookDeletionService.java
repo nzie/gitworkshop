@@ -1,11 +1,5 @@
 package de.syngenio.lib.service;
 
-import java.util.Collection;
-
-import de.syngenio.lib.dao.BookDao;
-import de.syngenio.lib.domainobject.Book;
-import de.syngenio.lib.io.CharacterReader;
-
 public class BookDeletionService implements IMenuChoiceService{
 
 	private BookDao bookDao;
