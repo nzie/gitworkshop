@@ -56,7 +56,7 @@ public class GitLibrary {
 		createBook("Stephan Kings Es2" +
 				"", "9983-78978");
 		createBook("Pipi Langstrumpf", "9983-78978");
-		createBook("Illuminati", "790823-89079");
+		createBook("Ronja Reubertochter", "790823-89079");
 		printWelcomeMsg();
 		printOptions();
 		System.out.println("Goodbye dear user");
