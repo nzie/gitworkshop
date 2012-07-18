@@ -48,7 +48,7 @@ public class GitLibrary {
 	}
 
 	public void start() {
-		createBook("Harry Potter", "9983-78978");
+		createBook("Pipi Langstrumpf", "9983-78978");
 		createBook("Illuminati", "790823-89079");
 		printOptions();
 		System.out.println("Goodbye dear user");
