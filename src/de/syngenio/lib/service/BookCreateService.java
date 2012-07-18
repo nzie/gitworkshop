@@ -1,8 +1,12 @@
 package de.syngenio.lib.service;
 
+import de.syngenio.lib.dao.BookRegistry;
+import de.syngenio.lib.domainobject.Book;
+import de.syngenio.lib.io.CharacterReader;
+
 public class BookCreateService implements IMenuChoiceService{
 
-	
+
 	@Override
 	public void optionSelected() {
 		String name = CharacterReader.readString("Name:");
