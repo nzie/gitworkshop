@@ -1,5 +1,7 @@
 package de.syngenio.lib;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -48,10 +50,18 @@ public class GitLibrary {
 	}
 
 	public void start() {
+		createBook("Stephan Kings Es", "9983-78978");
 		createBook("Pipi Langstrumpf", "9983-78978");
 		createBook("Illuminati", "790823-89079");
+		printWelcomeMsg();
 		printOptions();
 		System.out.println("Goodbye dear user");
+	}
+
+	private void printWelcomeMsg() {
+		Date today = new Date();
+		SimpleDateFormat formatter = new SimpleDateFormat();
+		System.out.println("Welcome to the Lib! " + formatter.format(today));
 	}
 
 	private void printOptions() {
