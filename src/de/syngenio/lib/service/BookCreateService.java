@@ -8,6 +8,7 @@ public class BookCreateService implements IMenuChoiceService{
 	
 	@Override
 	public void optionSelected() {
+		bookDao.findBookById(213);
 		bookDao.deleteBook();
 		System.out.println("hello");
 		System.out.println("throw new UnsupportedOperationException ");
