@@ -1,10 +1,11 @@
 package de.syngenio.lib.service;
 
-import de.syngenio.lib.dao.BookDao;
+import java.util.Collection;
 
-public class BookRentService implements IMenuChoiceService{
-	
-	BookDao bookDao;
+import de.syngenio.lib.domainobject.Book;
+import de.syngenio.lib.io.CharacterReader;
+
+public class BookRentService extends Service implements IMenuChoiceService{
 	
 	@Override
 	public void optionSelected() {
